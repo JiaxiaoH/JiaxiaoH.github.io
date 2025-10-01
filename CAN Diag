@@ -1,10 +1,19 @@
 Diagnostic Communication
 "Diag CAN"是CAN诊断，即对CAN网络各个节点和总线的故障检查与修复。
+一、诊断的基本知识
 一般来说对于汽车的ECU诊断有以下两种方式：
 ·on-board diagnostics(OBD,车载诊断系统,オンボード診断)：ECU自我诊断
 ·off-board diagnostics(离线诊断,オンボード診断):通过和外接的诊断tester通信，接收指示并做出特别动作
 （有的时候off-board diagnostics也被叫做OBD）
 
+·诊断connecter
+因为在用离线诊断的时候ECU必须和诊断tester连接，把线束(wire harness)改造延长的工作很麻烦，所以设置了专用的connecter。
+
+二、用于诊断的通信
+·Diag通信(Diagnostic Communication)
+对于Diag通信，从原理上来说怎样的顺序都是可以的。但是各个公司和各个汽车甚至是各个系统的通信顺序总是各种各样的，诊断功能在使用起来比较麻烦。
+因此，随着电子控制系统的发展和通信程序的标准化，现在基本上是按照下面的顺序进行的。
+①从诊断tester发送请求消息(Request message)作为传达给ECU的指示。
 
 
 
