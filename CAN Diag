@@ -1,4 +1,4 @@
-<p >Diagnostic Communication
+<p style="white-space: pre;">Diagnostic Communication
 "Diag CAN"是CAN诊断，即对CAN网络各个节点和总线的故障检查与修复。
 一、诊断的基本知识
 一般来说对于汽车的ECU诊断有以下两种方式：
