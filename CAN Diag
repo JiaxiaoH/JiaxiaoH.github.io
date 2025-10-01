@@ -17,15 +17,15 @@ Diagnostic Communication
 ②在指示能够被执行的情况下，ECU按照执行去做并展示出“指示已经被执行”以及“指示执行后的结果”、将它们作为正响应码(positive response message)发送。
 ③如果因为某种原因指示无法被执行，ECU将展示出“只是无法被执行”以及“无法执行的理由”作为负响应码(NRC, negative response message)发送
 
+ECU无法执行诊断测试器指示的情况有几种可能。
+可能是因为请求消息的格式或数据值错误而无法执行指示，或者为了安全考虑而无法执行指示（例如车辆正在行驶）。
+当诊断测试器从ECU接收到负响应时，会据此中止一系列的诊断处理。
 
+正响应码和负响应码统称为响应码。另外，请求消息和响应消息合起来称为诊断消息。
 
-
-
-
-
-
-
-
+·诊断消息的收件人类型
+诊断消息一般从一个连接了多个ECU的CAN Bus获取。因此必须要指定诊断消息的收信人。
+指定方法有两种，分别是物理寻址(Physical Addressing)和功能寻址(Functional Addressing)。
 
 
 https://cdn.vector.com/cms/content/know-how/VJ/PDF/For_Beginners_Diagnostic_Communication.pdf
