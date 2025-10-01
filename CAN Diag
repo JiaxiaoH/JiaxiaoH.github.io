@@ -1,4 +1,4 @@
-<p style="white-space: pre;">Diagnostic Communication
+Diagnostic Communication
 "Diag CAN"是CAN诊断，即对CAN网络各个节点和总线的故障检查与修复。
 一、诊断的基本知识
 一般来说对于汽车的ECU诊断有以下两种方式：
@@ -104,7 +104,7 @@ CAN-ID 的分配方法有多种规范可供使用。
 
 ·利用中的标准规范
 作为诊断消息的标准规范，因制定的目的、规格、新旧而不同，很多的规范（或者说协议）如下表所示。
-  <表格>
+  《表格》
 
 ·乘用车对的ECU的Diag通信标准
 乘用车上搭载的ECU各自的通信规格，是基于汽车制造商的标准规格，并融入ECU的个别规格而制定的。
@@ -113,8 +113,20 @@ CAN-ID 的分配方法有多种规范可供使用。
 对于发动机控制ECU、变速器控制ECU等可能影响排放净化性能的ECU，除了上述基于KWP/UDS的诊断功能外，还会实现OBD功能（一个ECU可以同时具备两种功能）。
 各个诊断功能的概要在“5.使用诊断功能的业务及诊断消息示例”中进行说明。
 
+·诊断消息的框架
+KWP、UDS(WWH-OBD)、OBD的诊断消息的基本结构是相同的，只有SAE J1939采用独特的形式。
 
-
+诊断消息（除了SAE J1939）的要素如下所示：
+	请求消息的构成
+	SID 	Sub function		Data ID		Data
+	·SID（必须）
+	 表示所请求的诊断服务的大致范围的长度1byte的识别号码（Service ID）
+	·子功能（可选项）
+	 表示要求的诊断服务的详细内容，识别号码1byte长
+	·Data ID（可选项）
+	 表示要求的服务对象，ID号码长度为1~2byte
+	·数据（可选项）
+	 实施服务所需的除上述以外的数据
 
 
 
@@ -127,4 +139,4 @@ CAN-ID 的分配方法有多种规范可供使用。
 
     
 https://cdn.vector.com/cms/content/know-how/VJ/PDF/For_Beginners_Diagnostic_Communication.pdf
-</p>
+
