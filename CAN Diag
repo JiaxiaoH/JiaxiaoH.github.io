@@ -117,18 +117,39 @@ CAN-ID 的分配方法有多种规范可供使用。
 KWP、UDS(WWH-OBD)、OBD的诊断消息的基本结构是相同的，只有SAE J1939采用独特的形式。
 
 诊断消息（除了SAE J1939）的要素如下所示：
-	请求消息的构成
+	请求消息的结构
 	SID 	Sub function		Data ID		Data
 	·SID（必须）
 	 表示所请求的诊断服务的大致范围的长度1byte的识别号码（Service ID）
-	·子功能（可选项）
+	·Sub function（可选项）
 	 表示要求的诊断服务的详细内容，识别号码1byte长
 	·Data ID（可选项）
 	 表示要求的服务对象，ID号码长度为1~2byte
-	·数据（可选项）
+	·Data（可选项）
 	 实施服务所需的除上述以外的数据
 
+	正响应码的结构
+	SID 	Sub function		Data ID		Data
+	·SID（必须）
+	 表示所请求的诊断服务的识别号码（Service ID）
+	 回复 <请求消息的 SID + 0x40>
+	·Sub function（可选项）
+	 将所要求的Sub function的值原样复述
+	·Data ID（可选项）
+	 将所要求的Data ID的值原样复述
+	·Data（可选项）
+	 报告实施诊断服务后获得的数据
 
+	负响应码的结构
+	SID 	SIDRQ		NRC
+	·SID（必须）
+	 表示是负效应码的识别号码（固定位0x7F）
+	·SIDRQ（必须）
+	 将无法执行的服务的SID的值原样复述
+	·NRC（必须）
+	 无法执行命令的理由以代码的形式进行报告。
+
+	《例子省略》
 
 
 
