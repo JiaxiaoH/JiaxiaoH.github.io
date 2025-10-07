@@ -19,8 +19,7 @@ git push -u origin main
 常见问题及解决方法
 ·fatal: unable to access 'https://github.com/JiaxiaoH/XXXXX.git/': Could not resolve host: github.com
  原因：①网络不通或被防火墙/代理屏蔽 ②DNS 解析异常 ③公司或校园网络限制了 github.com
- 解决方法：使用代理，如在终端中输入git config --global http.proxy http://ttp.proxy http://[你的代理]:[端口号]
-
+ 解决方法：使用代理，如在终端中输入git config --global https.proxy http://<用户名>:<密码>@proxy.company.com:[端口号]
 四、同步更新内容
 在未来，每当你完成代码更改并希望同步到 GitHub 时，只需执行以下命令：
 git add .
